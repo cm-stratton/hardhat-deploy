@@ -44,7 +44,6 @@ import {filterABI, mergeABIs, recode} from './utils';
 import fs from 'fs-extra';
 
 import OpenZeppelinTransparentProxy from '../extendedArtifacts/TransparentUpgradeableProxy.json';
-import OptimizedTransparentUpgradeableProxy from '../extendedArtifacts/OptimizedTransparentUpgradeableProxy.json';
 import DefaultProxyAdmin from '../extendedArtifacts/ProxyAdmin.json';
 import eip173Proxy from '../extendedArtifacts/EIP173Proxy.json';
 import eip173ProxyWithReceive from '../extendedArtifacts/EIP173ProxyWithReceive.json';
@@ -1151,15 +1150,6 @@ export function addHelpers(
               checkABIConflict = false;
               proxyContract = OpenZeppelinTransparentProxy;
               viaAdminContract = 'DefaultProxyAdmin';
-            } else if (
-              options.proxy.proxyContract === 'OptimizedTransparentProxy'
-            ) {
-              checkABIConflict = false;
-              proxyContract = OptimizedTransparentUpgradeableProxy;
-              viaAdminContract = 'DefaultProxyAdmin';
-              // } else if (options.proxy.proxyContract === 'UUPS') {
-              //   checkABIConflict = true;
-              //   proxyContract = UUPSProxy;
             } else if (options.proxy.proxyContract === 'UUPS') {
               checkABIConflict = false;
               checkProxyAdmin = false;

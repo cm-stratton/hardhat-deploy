@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
 
 abstract contract Proxied {
     /// @notice to be used by initialisation / postUpgrade function so that only the proxy's admin can execute them
